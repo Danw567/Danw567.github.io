@@ -7,27 +7,34 @@ function Image() {
     return(
         <div className="image-with-border">
             <div className="inner">
-                <img src="https://plus.unsplash.com/premium_photo-1676299910876-747eeb0c11dc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3F1YXJlfGVufDB8fDB8fHww" alt="tast image" />
+                <img height="500px" width="500px" src="https://plus.unsplash.com/premium_photo-1676299910876-747eeb0c11dc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3F1YXJlfGVufDB8fDB8fHww" alt="tast image" />
             </div>
         </div>
+    )
+}
+
+function LandingSection() {
+    return(        
+        <section>
+            <div className="hero-section">
+                <Image />
+                <div className="hero-section-text">
+                    <h1>Daniel Widdup</h1>
+                    <h2>Full-stack Developer</h2>
+                    <p>Hey, I am a full stack Developer from Colne, yadaydaydaydya</p>
+                </div>
+            </div>
+        </section>      
     )
 }
 
 function HomePage() {
     return (
         <>
-            <Navigation activePage="Home" />            
-            <section style={{ margin: 20 }}>
-                <Image />
-
-
-                {/* <Button type="primary" cta="Call To Action" onclick="" linkTo="" titleText="I am a call to action title" />
-                <Button type="secondary" cta="Call To Action" onclick="" linkTo="" titleText="I am a call to action title" />
-                <Button type="link" cta="Call To Action" onclick="" linkTo="" titleText="I am a call to action title" />
-
-                <p>This is a random sentence with a <InlineLink text="random" link="" titleText="I am a call to action title" /> link inside of it</p> */}
-            </section>
-
+            <Navigation activePage="Home" />  
+            <main>                    
+                <LandingSection />
+            </main>
         </>
     )
 }
