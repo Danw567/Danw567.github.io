@@ -4,8 +4,6 @@ import { InlineLink } from "./components/atoms/cta_button.jsx";
 import React from 'react';
 
 function Image() {
-
-
     return(
         <div className="image-with-border">
             <div className="inner">
@@ -18,9 +16,7 @@ function Image() {
 function HomePage() {
     return (
         <>
-            <Navigation activePage="Home" />
-
-            <h1>d.widdup</h1>
+            <Navigation activePage="Home" />            
             <section style={{ margin: 20 }}>
                 <Image />
 
