@@ -21,7 +21,9 @@ function LandingSection() {
                 <div className="hero-section-text">
                     <h1>Daniel Widdup</h1>
                     <h2>Full-stack Developer</h2>
-                    <p>Hey, I am a full stack Developer from Colne, yadaydaydaydya</p>
+                    <p><strong>I craft intuitive, secure, and scalable web experiences.</strong></p>
+                    <p>With hands-on SaaS experience and a passion for user-first design, I work across JavaScript, C#, ASP.NET, AWS, and SQL to bring ideas to life through clean code and thoughtful development.</p>
+                    <p>This portfolio is built as part of my journey learning React — constantly improving, building, and pushing my skills forward.</p>
                 </div>
             </div>
         </section>      
