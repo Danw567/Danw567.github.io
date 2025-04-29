@@ -8,6 +8,7 @@ function ProjectsPage() {
         <>
             <Navigation activePage="Projects" />
             <h1>ProjectsPage</h1>
+            <h2>Coming soon</h2>
         </>
     )
 }

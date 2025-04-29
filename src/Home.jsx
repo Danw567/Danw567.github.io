@@ -3,11 +3,11 @@ import Button from "./components/atoms/cta_button.jsx"
 import { InlineLink } from "./components/atoms/cta_button.jsx";
 import React from 'react';
 
-function Image() {
+export function ImageOfMe() {
     return(
         <div className="image-with-border">
             <div className="inner">
-                <img height="500" width="500" src="/me.jpg" alt="Me on a walk with a view of the surrounding scenery in the background" />
+                <img height="500" width="500" src="images/me.jpg" alt="Me on a walk with a view of the surrounding scenery in the background" />
             </div>
         </div>
     )
@@ -17,7 +17,7 @@ function LandingSection() {
     return(        
         <section>
             <div className="hero-section">
-                <Image />
+                <ImageOfMe />
                 <div className="hero-section-text">
                     <h1>Daniel Widdup</h1>
                     <h2>Full-stack Developer</h2>

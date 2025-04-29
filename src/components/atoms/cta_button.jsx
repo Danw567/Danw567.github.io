@@ -3,7 +3,7 @@ import './atoms.css';
 
 export function InlineLink({text, link, titleText}) {
     return(
-        <a className="inline-link" href={link} title={titleText}>
+        <a rel="noopener noreferrer" className="inline-link" href={link} title={titleText}>
             {text}
         </a>
     )

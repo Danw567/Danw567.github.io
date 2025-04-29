@@ -50,15 +50,6 @@ function UserProfile() {
   )
 }
 
-let content;
-var flag = true;
-// if (flag) {
-//   content = <UserProfile />
-// } else {
-//   content = <AboutPage />
-// }
-
-
 
 function MyButton({count, onClick}) {
   return (
@@ -74,15 +65,6 @@ function MyButtonSeparateUpdate() {
 
   return (
     <button onClick={handleClick}>Times Clicked {count}. Update singular</button>    
-  )
-}
-
-function AboutPage() {
-  return (
-    <>
-      <h1 className={flag ? "green_text" : "red_text"}>About React</h1>
-      <p>Hello, I'm Daniel.<br />I am learning react.</p>
-    </>
   )
 }
 
@@ -151,11 +133,16 @@ function Board({xIsNext, squares, onPlay}) {
     onPlay(nextSquares)
   }
 
+  const allSquaresFilled = squares.filter(x => x == null).length == 0 ? true : false;
+
   const winner = calculateWinner(squares);  
   let status;
   if (winner) {
-    status = `Winner: ${winner}`;
-  } else {
+    status = `WINNER: ${winner}`;
+  } else if (!winner && allSquaresFilled == true) {
+    status = `DRAW - Click 'Restart' to play again`;
+  } 
+  else {
     status = `Next Player: ${xIsNext ? "X" : "O"}`;
   }
 
@@ -187,7 +174,6 @@ function Game() {
   const xIsNext = currentMove % 2 === 0;
   const currentSquares = history[currentMove];
 
-  const [winsSoFar, setWinArr] = useState(Array())  
   const [xWins, setXWins] = useState(0);
   const [oWins, setOWins] = useState(0);
   const [draws, setDraws] = useState(0);
@@ -199,11 +185,9 @@ function Game() {
   }
 
   function updateScores(squares) {    
-    console.log("squares: ", squares);
     const winner = calculateWinner(squares);   
 
     const allSquaresFilled = squares.filter(x => x == null).length == 0 ? true : false;
-    console.log("allSquaresFilled: ", allSquaresFilled);
 
     if (winner == "X") {
       setXWins(xWins + 1);         
@@ -230,7 +214,7 @@ function Game() {
     if (move > 0) {
       description = 'Go to move #' + move;
     } else {
-      description = 'Go to start';
+      description = 'Restart';
     }
 
     return (
@@ -255,6 +239,17 @@ function Game() {
   )
 }
 
+function TicTacToe() {
+  return(
+    <section>
+      <h2>Tic-Tac-Toe</h2>
+      <p>This was the first React tutorial I tackled. Following along with the official docs, I built a Tic-Tac-Toe game (or noughts and crosses, for the Brits out there). I didn’t stop at the basics though, I added a score counter to keep things interesting.</p>
+      <p>Got someone nearby? Jump in and play a round!</p>      
+      <Game />
+    </section>    
+  )
+}
+
 function Playground() {
   const [count, setCount] = useState(0);
   function handleClick(evt) {
@@ -262,25 +257,16 @@ function Playground() {
   }
 
   return (
-    <div>
+    <>
       <Navigation activePage="Playground" />
-      <h1>Tic-tac-toe</h1>
+      
+      <section>
+        <h1>My Playground</h1>
+        <p>This page is my little React playground — a space for tinkering, following tutorials, and messing around with new ideas as I learn.</p>
+      </section>
 
-      {/* TEST COMPONENTS */}
-      {/* <MyButton />
-      <AboutPage />
-      <UserProfile />
-      <ProductList />
-      <MyButton count={count} onClick={handleClick} />
-      <MyButton count={count} onClick={handleClick} />
-      <MyButtonSeparateUpdate /> */}
-      {/* END TEST COMPONENTS */}
-
-      {/* TIC-TAC-TOE GAME */}
-      <Game />
-
-      {/* END TIC TAC TOE GAME */}
-    </div>
+      <TicTacToe />
+    </>
   )
 }
 

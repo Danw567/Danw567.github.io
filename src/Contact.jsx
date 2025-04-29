@@ -6,6 +6,7 @@ function ContactPage() {
         <>
             <Navigation activePage="Contact" />
             <h1>ContactPage</h1>
+            <h2>Coming soon</h2>
         </>
     )
 }
