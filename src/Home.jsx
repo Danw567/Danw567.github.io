@@ -7,7 +7,7 @@ function Image() {
     return(
         <div className="image-with-border">
             <div className="inner">
-                <img height="500" width="500" src="/images/me.jpg" alt="Me on a walk with a view of the surrounding scenery in the background" />
+                <img height="500" width="500" src="/me.jpg" alt="Me on a walk with a view of the surrounding scenery in the background" />
             </div>
         </div>
     )
