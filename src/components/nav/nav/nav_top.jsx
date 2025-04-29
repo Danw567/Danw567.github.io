@@ -1,16 +1,16 @@
 
-
-import { useState } from 'react'
-import ThemeToggle from './ThemeToggle.jsx'
-import './nav_top.css'
+import { useState } from 'react';
+import { ThemeToggle } from './Toggles.jsx'
+import { MenuToggle } from './Toggles.jsx'
 import { Link } from 'react-router-dom';
+import './nav_top.css'
 
 function NavLink({linkName, linkHref, isActive}) {    
     return(
         <Link className="nav-link" data-active={isActive} to={linkHref}>
             {linkName}
         </Link>
-    )
+    )    
 }
 
 function NavigationLinks({activePage}) {
@@ -54,18 +54,77 @@ function Logo() {
     )
 }
 
-
-
-function NavTop({activePage}) {
-    return(      
-        <nav>
+function DesktopNav({activePage}) {
+    return(
+        <>
             <div className="navigation-left">
                 <Logo />
                 <NavigationLinks activePage={activePage} />
             </div>            
-            <ThemeToggle />
-            
-        </nav>        
+            <ThemeToggle />            
+        </>
+    )
+}
+
+function MobileMenu({isActive}) {
+    var menuToBeShown = isActive;
+    var menuClassNames = "side-menu";
+    if (menuToBeShown == true)
+        menuClassNames += " side-menu-active";
+
+    return(
+        <aside className={menuClassNames} id="sideMenu">
+            <div className='side-menu-outer'>
+                <div className="side-menu-inner">
+                    <NavigationLinks />                
+                </div>
+                <ThemeToggle /> 
+            </div>
+        </aside>
+    )
+}
+
+function MobileNav({buttonClass, menuToggle}) {   
+    return(
+        <>
+            <div className="navigation-left">
+                <Logo />                
+            </div>            
+            <MenuToggle buttonClass={buttonClass} handleClick={menuToggle} />                        
+        </>
+    )
+}
+
+function MenuOverlay({isActive}) {
+    return(
+        <div className={isActive ? "menu-overlay" : ""}></div>
+    )
+}
+
+function NavTop({activePage}) {
+    const [buttonActive, setMenuClass] = useState("menu-toggle-outer");
+    const [isMenuActive, setMenuActive] = useState(false);
+
+    function menuToggle() {
+        buttonActive == "menu-toggle-outer" 
+        ? setMenuClass("menu-toggle-outer menu-toggle-active") 
+        : setMenuClass("menu-toggle-outer");
+        setMenuActive(!isMenuActive);
+    }
+
+    const viewWidth = document.body.clientWidth;
+    let navigationView = viewWidth <= 950 
+        ? <MobileNav buttonClass={buttonActive} menuToggle={menuToggle} /> 
+        : <DesktopNav activePage={activePage} />
+   
+    return(      
+        <>
+            <nav>
+                {navigationView}    
+                <MobileMenu isActive={isMenuActive} />    
+            </nav>  
+            <MenuOverlay isActive={isMenuActive} /> 
+        </>                 
     )
 }
 

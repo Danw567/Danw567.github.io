@@ -1,6 +1,6 @@
 
 import { useState } from 'react';
-import './theme_toggle.css';
+import './toggles.css';
 
 function LightModeIcon() {
     return (
@@ -19,7 +19,7 @@ function DarkModeIcon() {
 }
 
 
-function ThemeToggle() {   
+export function ThemeToggle() {   
     let systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
     let storedTheme = window.localStorage.getItem("preferredTheme");
     let defaultTheme = storedTheme ?? systemTheme;
@@ -46,4 +46,16 @@ function ThemeToggle() {
     )
 }
 
-export default ThemeToggle;
+export function MenuToggle({buttonClass, handleClick}) {   
+
+    return(
+        <div className={buttonClass} onClick={handleClick}>
+            <div className="menu-toggle">
+                <div className="bar"></div>
+                <div className="bar"></div>
+                <div className="bar"></div>
+            </div>
+        </div>
+    )
+}
+

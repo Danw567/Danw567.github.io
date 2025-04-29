@@ -31,6 +31,7 @@ nav {
     justify-content: space-between;
     align-items: center;
     padding: 0px 20px;
+    min-height: 63px;
 }
 
 nav a {
@@ -58,3 +59,55 @@ a.nav-link {
     border-bottom: 2px solid var(--light-green);
 }
 
+/* side menu changes */
+
+.side-menu {
+    background: var(--dark-green);
+    position: absolute;
+    top: 63px;
+    left: -300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    height: calc(100vh - 63px);
+    min-height: fit-content;    
+    max-width: 300px;    
+    overflow: hidden;
+    width: calc(100% - 5px);
+    padding: 20px 40px;   
+    transition: .8s ease;
+}
+
+.side-menu-active {
+    left: 0;     
+}
+
+.side-menu-outer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.side-menu-outer::-webkit-scrollbar {
+    width: 5px;
+    }
+
+.side-menu-outer::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.side-menu-outer::-webkit-scrollbar-thumb {
+    background: var(--light-green);
+    border-radius: var(--border-radius)
+}
+  
+
+.side-menu .nav-link-container {
+    flex-direction: column;
+    gap: 30px;
+}
+
+.side-menu .nav-link-container a.nav-link {
+    padding: 0;
+}
