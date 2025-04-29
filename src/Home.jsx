@@ -7,7 +7,7 @@ function Image() {
     return(
         <div className="image-with-border">
             <div className="inner">
-                <img height="500px" width="500px" src="https://plus.unsplash.com/premium_photo-1676299910876-747eeb0c11dc?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c3F1YXJlfGVufDB8fDB8fHww" alt="tast image" />
+                <img height="500" width="500" src="src/assets/images/me.jpg" alt="Me on a walk with a view of the surrounding scenery in the background" />
             </div>
         </div>
     )
