@@ -18,7 +18,6 @@ function NavigationLinks({activePage}) {
     const navLinks = [
         {name: 'Home', href: '/'},
         {name: 'About Me', href: '/About'},
-        {name: 'Contact', href: '/Contact'},
         {name: 'Projects', href: '/Projects'},
         {name: 'Playground', href: '/Playground'}
     ]
