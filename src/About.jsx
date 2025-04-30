@@ -52,7 +52,7 @@ function AboutPage() {
                 <p>Hey, I'm Dan, or Danny, or Daniel, whichever feels right. I honestly don’t mind!</p>
                 
                 <p>For over a decade, I worked as a fishmonger, most recently at AO Seafoods Ltd. It was honest, hands-on work... but waking up at 2am every day? Not exactly a long-term dream.</p>
-                <p>About  {yearsDiff} years ago, one of those early mornings hit differently. I decided I needed a change — something that didn't involve fish scales before sunrise. So I dove into a bunch of free online courses through the Open University’s <InlineLink text="OpenLearn" link="https://www.open.edu/openlearn/" titleText="View courses for the Open University" /> platform.</p>
+                <p>About {yearsDiff} years ago, one of those early mornings hit differently. I decided I needed a change — something that didn't involve fish scales before sunrise. So I dove into a bunch of free online courses through the Open University’s <InlineLink text="OpenLearn" link="https://www.open.edu/openlearn/" titleText="View courses for the Open University" /> platform.</p>
 
                 <CourseBadges />
 

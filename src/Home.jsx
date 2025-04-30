@@ -1,5 +1,7 @@
 import Navigation from "./components/nav/Navigation";
-import Button from "./components/atoms/cta_button.jsx"
+import Button from "./components/atoms/cta_button.jsx";
+import { LinkedInBtn } from "./components/nav/nav/Toggles.jsx";
+import { EmailBtn } from "./components/nav/nav/Toggles.jsx";
 import { InlineLink } from "./components/atoms/cta_button.jsx";
 import React from 'react';
 
@@ -13,7 +15,7 @@ export function ImageOfMe() {
     )
 }
 
-function LandingSection() {
+function LandingSection() {   
     return(        
         <section>
             <div className="hero-section">
@@ -24,6 +26,11 @@ function LandingSection() {
                     <p><strong>I craft intuitive, secure, and scalable web experiences.</strong></p>
                     <p>With hands-on SaaS experience and a passion for user-first design, I work across JavaScript, HTML, CSS, C# and ASP.NET to bring ideas to life through clean code and thoughtful development.</p>
                     <p>This portfolio is built as part of my journey learning React. Constantly improving, building, and pushing my skills forward.</p>
+
+                    <div className="contact-buttons">
+                        <EmailBtn />
+                        <LinkedInBtn />
+                    </div>
                 </div>
             </div>
         </section>      

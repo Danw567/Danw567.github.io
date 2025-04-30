@@ -4,7 +4,9 @@
     color: var(--off-white);
     padding: 10px 30px;
     border-radius: 6px;
-    transition: .4s;
+    display: block;
+    width: fit-content;
+    /* transition: .4s; */
 }
 
 .button-primary {

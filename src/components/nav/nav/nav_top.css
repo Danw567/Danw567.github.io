@@ -73,7 +73,7 @@ a.nav-link {
     overflow: hidden;
     width: calc(100% - 5px);
     padding: 20px 40px 70px 40px;   
-    transition: .8s ease;
+    /* transition: .8s ease; */
 }
 
 .side-menu-active {

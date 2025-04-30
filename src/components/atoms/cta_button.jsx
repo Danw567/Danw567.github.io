@@ -21,7 +21,7 @@ function Button({type, cta, onclick, linkTo, titleText}) {
     }
 
     return(
-        <a className={buttonClass} title={titleText}>{cta}</a>
+        <a className={buttonClass} href={linkTo} title={titleText}>{cta}</a>
     )
 }
 

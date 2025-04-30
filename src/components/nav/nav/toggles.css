@@ -1,6 +1,7 @@
 
 .theme-toggle-icon,
-.menu-toggle-outer {
+.menu-toggle-outer,
+.social-icon-outer {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,12 +14,19 @@
     position: relative;
     cursor: pointer;
     color: var(--off-white);
-    transition: .2s ease;
+    /* transition: .2s ease; */
 }
 
-.theme-toggle-icon:hover {
+.social-icon-outer svg {
+    width: 20px;
+}
+
+.theme-toggle-icon:hover,
+.social-icon-outer:hover {
     color: var(--light-green)
 }
+
+
 
 .menu-toggle {
     width: 20px;
@@ -26,7 +34,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: .2s ease; 
+    /* transition: .2s ease;  */
 }
 
 .menu-toggle .bar {
@@ -34,7 +42,7 @@
     height: 2px;
     background: var(--off-white);
     opacity: 1;
-    transition: .2s ease;    
+    /* transition: .2s ease;     */
 }
 
 .menu-toggle-outer:hover .bar{

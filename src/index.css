@@ -55,6 +55,8 @@ body {
 
 nav, body, .side-menu, .menu-overlay { transition: .4s ease; }
 
+* { transition: .4s ease; }
+
 h1, h2, h3, h4, h4, h6 {
   font-family: "Syncopate", sans-serif; 
   font-weight: 400;
@@ -156,6 +158,11 @@ section.about ul {
   transform-origin: center;
 }
 
+.contact-buttons {
+  display: flex;
+  gap: 10px;
+}
+
 @keyframes rotate {
   from {
     transform: rotate(0);
@@ -197,7 +204,7 @@ a {
   text-decoration: inherit;
   color: var(--text);
   cursor: pointer;
-  transition: .3s ease;
+  /* transition: .3s ease; */
 }
 
 a:hover {
@@ -257,7 +264,7 @@ main {
   padding: 10px 20px;
   color: var(--off-white);
   cursor: pointer;
-  transition: .4s ease;
+  /* transition: .4s ease; */
 }
 
 .game-info button:hover {
@@ -330,9 +337,7 @@ main {
   filter: grayscale(.8);
   width: 100%;
   max-width: 130px;
-  transition: .6s ease;
-
-  
+  /* transition: .6s ease; */
 }
 
 .about-badges-cont img:hover {
