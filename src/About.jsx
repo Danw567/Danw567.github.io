@@ -28,6 +28,7 @@ function MyTechStack() {
         {tech: "Asp.NET", key: 5, image: ""},
         {tech: "AWS", key: 6, image: ""},
         {tech: "MySQL", key: 7, image: ""},
+        {tech: "Git", key: 8, image: ""}
     ]
     
     const listStack = techStack.map(item => 
