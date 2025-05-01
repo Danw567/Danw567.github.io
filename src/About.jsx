@@ -30,7 +30,8 @@ function MyTechStack() {
         {tech: "Asp.NET", key: 5, image: "/images/aspnet.webp"},
         {tech: "AWS", key: 6, image: "/images/AWS.webp"},
         {tech: "MySQL", key: 7, image: "/images/MySQL.webp"},
-        {tech: "Git", key: 8, image: "/images/git.webp"}
+        {tech: "Git", key: 8, image: "/images/git.webp"},
+        {tech: "React", key: 9, image: "/images/react.svg"}
     ]
     
     const listStack = techStack.map(item => 

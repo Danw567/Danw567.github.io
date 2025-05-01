@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import reactLogo from './assets/react.svg'
+import reactLogo from '/images/react.svg'
 import Navigation from "./components/nav/Navigation";
 import Footer from './components/nav/nav/nav_bottom';
 

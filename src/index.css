@@ -368,6 +368,10 @@ main {
   max-height: 60px;  
 }
 
+.content-wbg ul img[alt="React"] {
+  width: 60px;
+}
+
 article.sticky-content {
   display: flex;
   flex-wrap: wrap;
