@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import HomePage from './Home.jsx';
 import AboutPage from './About.jsx';
@@ -6,11 +6,21 @@ import ProjectsPage from './Projects.jsx';
 import Playground from './Playground.jsx';
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import '../src/App.css'
-
+import '../src/App.css';
+import { onPageLoad } from '../src/utilites.js';
 
 
 function App() {
+
+  useEffect(() => {
+    if (document.readyState === 'complete') {
+      onPageLoad();
+    } else {
+      window.addEventListener('load', onPageLoad, false);
+      return () => window.removeEventListener('load', onPageLoad);
+    }    
+  })
+
   return(
     
     <Router>
@@ -21,15 +31,6 @@ function App() {
         <Route path="/Playground" element={<Playground />} />
       </Routes>
     </Router>
-
-
-    // <>
-    //     <Navigation />    
-        
-    //     <div className="main-section">
-    //       <HomePage />
-    //     </div>
-    // </>
   )
 }
 

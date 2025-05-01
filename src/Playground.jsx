@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import reactLogo from './assets/react.svg'
 import Navigation from "./components/nav/Navigation";
-import viteLogo from '/vite.svg'
+import Footer from './components/nav/nav/nav_bottom';
+
+import { onPageLoad } from './utilites';
 import './App.css'
 
 const user = {
@@ -256,16 +258,27 @@ function Playground() {
     setCount(count + 1);
   }
 
+  useEffect(() => {
+      if (document.readyState === 'complete') {
+      onPageLoad();
+      } else {
+      window.addEventListener('load', onPageLoad, false);
+      return () => window.removeEventListener('load', onPageLoad);
+      }    
+  })
+
   return (
     <>
       <Navigation activePage="Playground" />
-      
-      <section>
-        <h1>My Playground</h1>
-        <p>This page is my little React playground — a space for tinkering, following tutorials, and messing around with new ideas as I learn.</p>
-      </section>
+      <main>
+        <section>
+          <h1>My Playground</h1>
+          <p>This page is my little React playground — a space for tinkering, following tutorials, and messing around with new ideas as I learn.</p>
+        </section>
 
-      <TicTacToe />
+        <TicTacToe />
+      </main>
+      <Footer />
     </>
   )
 }

@@ -1,15 +1,19 @@
 import Navigation from "./components/nav/Navigation";
+import Footer from "./components/nav/nav/nav_bottom.jsx";
 import Button from "./components/atoms/cta_button.jsx";
 import { LinkedInBtn } from "./components/nav/nav/Toggles.jsx";
 import { EmailBtn } from "./components/nav/nav/Toggles.jsx";
 import { InlineLink } from "./components/atoms/cta_button.jsx";
-import React from 'react';
+import React, { useEffect } from 'react';
+import { onPageLoad } from "./utilites.js";
+
+
 
 export function ImageOfMe() {
     return(
         <div className="image-with-border">
             <div className="inner">
-                <img height="500" width="500" src="images/me.jpg" alt="Me on a walk with a view of the surrounding scenery in the background" />
+                <img height="500" width="500" src="images/me.webp" alt="Me on a walk with a view of the surrounding scenery in the background" />
             </div>
         </div>
     )
@@ -38,12 +42,22 @@ function LandingSection() {
 }
 
 function HomePage() {
+    useEffect(() => {
+        if (document.readyState === 'complete') {
+        onPageLoad();
+        } else {
+        window.addEventListener('load', onPageLoad, false);
+        return () => window.removeEventListener('load', onPageLoad);
+        }    
+    })
+
     return (
         <>
             <Navigation activePage="Home" />  
             <main>                    
                 <LandingSection />
             </main>
+            <Footer />
         </>
     )
 }

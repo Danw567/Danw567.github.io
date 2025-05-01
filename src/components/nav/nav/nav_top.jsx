@@ -42,7 +42,7 @@ function NavigationLinks({activePage}) {
     )
 }
 
-function Logo() {
+export function Logo() {
     return(
         <>
             <Link to="/" className="logo">
@@ -120,11 +120,16 @@ function NavTop({activePage}) {
         <>
             <nav>
                 {navigationView}    
-                <MobileMenu isActive={isMenuActive} />    
+                <MobileMenu isActive={isMenuActive} /> 
             </nav>  
             <MenuOverlay isActive={isMenuActive} /> 
         </>                 
     )
+}
+
+window.onscroll = () => {
+    var nav = document.querySelector("nav");
+    window.scrollY > 0 ? nav.classList.add("nav-after-scroll") : nav.classList.remove("nav-after-scroll");
 }
 
 export default NavTop;
