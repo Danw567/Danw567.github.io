@@ -20,24 +20,18 @@ function NavigationLinks({activePage}) {
         {name: 'About Me', href: '/About'},
         {name: 'Projects', href: '/Projects'},
         {name: 'Playground', href: '/Playground'}
-    ]
-
-    let linkList = [];
-    navLinks.forEach((link, i) => {
-        let isActive = false;
-        
-        if (link.name == activePage){
-            isActive = true;
-        }
-
-        linkList.push(
-            <NavLink linkName={link.name} linkHref={link.href} isActive={isActive} key={i} />
-        );
-    })
+    ]   
 
     return(
         <div className="nav-link-container">
-            {linkList}
+            {navLinks.map((link, i) => (
+                <NavLink
+                    key={i}
+                    linkName={link.name}
+                    linkHref={link.href}
+                    isActive={link.name == activePage}
+                />
+            ))}
         </div>
     )
 }
@@ -105,9 +99,11 @@ function NavTop({activePage}) {
     const [isMenuActive, setMenuActive] = useState(false);
 
     function menuToggle() {
-        buttonActive == "menu-toggle-outer" 
-        ? setMenuClass("menu-toggle-outer menu-toggle-active") 
-        : setMenuClass("menu-toggle-outer");
+        setMenuClass((prev) => 
+            prev == "menu-toggle-outer"
+            ? "menu-toggle-outer menu-toggle-active"
+            : "menu-toggle-outer"
+        );
         setMenuActive(!isMenuActive);
     }
 
