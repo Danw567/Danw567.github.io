@@ -38,14 +38,14 @@ function DarkModeIcon() {
 
 export function ThemeToggle() {   
     let systemTheme = window.matchMedia('(prefers-color-scheme: dark)').matches ? "dark" : "light";
-    let chromeBrowserColor = systemTheme == "light" ? "#222831" : "#76ABAE";
+    let chromeBrowserColor = systemTheme == "light" ? "#C7D0D1" : "#222831";
     let storedTheme = window.localStorage.getItem("preferredTheme");
     let defaultTheme = storedTheme ?? systemTheme;
     const [colorTheme, setColorTheme] = useState(defaultTheme); 
 
     function handleClick() {    
         let themeToSet = colorTheme == "light" ? "dark" : "light";
-        let browserColor = colorTheme == "light" ? "#76ABAE" : "#222831";
+        let browserColor = colorTheme == "light" ? "#C7D0D1" : "#222831";
         document.getElementById("browserThemeColor").content = browserColor;
         setColorTheme(themeToSet);
         window.localStorage.setItem("preferredTheme", themeToSet);
