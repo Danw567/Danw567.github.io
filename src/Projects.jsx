@@ -4,6 +4,7 @@ import Footer from './components/nav/nav/nav_bottom';
 import { onPageLoad } from './utilites';
 
 const myProjects = [
+    // image dimensions = 480 x 400
     {
         name: "some url", 
         image: "/images/project_images/dpw-portfolio-screenshot.webp", 
