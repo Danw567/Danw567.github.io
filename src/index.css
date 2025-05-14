@@ -52,10 +52,10 @@ body {
 *::after {
     -webkit-box-sizing: inherit;
         -moz-box-sizing: inherit;
-            box-sizing: inherit;            
+            box-sizing: inherit;   
+            transition: .4s ease;         
 }
 
-* { transition: .4s ease; }
 
 @media (prefers-reduced-motion: reduce) {
   * {
@@ -416,16 +416,32 @@ article.sticky-content {
   font-size: smaller;
 }
 
-.view-proj-overlay {
-
-}
-
 .margin-bottom {
-  margin-bottom: 80px
+  margin-bottom: 40px
 }
 
+.project-section img {  
+  position: sticky;
+  top: 0;
+}
 
-@media only screen and (min-width: 900px ) {    
+.project-section-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media only screen and (max-width: 899px) {
+  .hover-secondary-container {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 900px ) {  
+  .margin-bottom {
+    margin-bottom: 80px
+  }
+  
   .project-section {    
     flex-direction: row;
   }
@@ -433,6 +449,64 @@ article.sticky-content {
   .project-section img {  
     min-width: 480px
   }
+
+  .project-section-text {
+    align-items: flex-start;
+  }
+  
+  .project-section-image {
+    position: relative;
+  }
+
+  .project-section-image:before {
+    content: "";
+    height: 100%;
+    max-height: 400px;
+    width: 0%;
+    opacity: 0;
+    position: absolute;  
+    top: 0;
+    left: 0;
+    z-index: 3;
+    background: var(--light-dark-green);
+    border-radius: var(--border-radius) 0 0 var(--border-radius);
+  }
+
+  .project-section-image:after {
+    content: "";
+    height: 100%;
+    max-height: 400px;
+    width: 0%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 3;
+    background: var(--light-dark-green);
+    border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  }
+
+  .project-section-image:hover:after,
+  .project-section-image:hover:before {
+    width: 50%;
+    opacity: .9;
+  }
+
+  .hover-secondary-container {
+    position: absolute;
+    top: 200px;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    opacity: 0;
+  }
+
+  .project-section-image:hover .hover-secondary-container {
+    opacity: 1;
+    z-index: 4;
+  }
+
 }
 
 

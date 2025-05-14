@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import Navigation from "./components/nav/Navigation";
 import Footer from './components/nav/nav/nav_bottom';
+import Button from "./components/atoms/cta_button.jsx"; 
 import { onPageLoad } from './utilites';
 
 const myProjects = [
@@ -20,14 +21,23 @@ const myProjects = [
         name: "Crafty - Store Template Base Design", 
         image: "/images/project_images/crafty-base-design.webp", 
         url: "https://crafty.fws.store/", 
-        description_paragraphs: ["This was a "], 
+        description_paragraphs: [
+            "This was a theme created while I was working for Freewebstore.",
+            "The design was made to adhere to modern SEO strategies and design patterns with Javascript powered horizontal sliders to coincide with more modern mobile-first ideologies.",
+            "Within the first week of launching the theme on the platform, over 1000 stores chose to build their stores on it. The image of the design you see here is of the base design I created, there are some product names that may look as they have been created for testing purposes, because they were."
+        ], 
         techUsed: ["HTML", "CSS", "Javascript", "JQuery"]
     },
     {
         name: "Crafty - Store Template Defrag Design", 
         image: "/images/project_images/crafty-design-defrag.webp", 
         url: "https://www.defrag.lt/", 
-        description_paragraphs: ["some description"], 
+        description_paragraphs: [
+            "This project was helping a personal friend set up their store on Freewebstore using the theme I created.",
+            "Now, I don't agree with guns, but my friend resides in Lithuania where guns are plentiful and he works to secure them with specialised gun safes. So I might not agree with guns being available, however, I can work to keep them safe, in safes.... HA.",
+            "With this project, I designed his logo and created the banner content in between the banner sections whilst also adding some further functionality using Javascript.",
+            "This was a project for someone who was seeking to start their personal business journey. As a result of setting the store up, my friend has seen his business flourish with his new online store."
+        ], 
         techUsed: ["HTML", "CSS", "Javascript", "JQuery"]
     }
 ]
@@ -41,8 +51,10 @@ function TechStackPill({techName}) {
 function ProjectImage({imageSrc, name, url}) {
     return(
         <a href={url} target="_blank" className='project-section-image' title={`View ${name} site`}>
-            <div className="view-proj-overlay"></div>
             <img src={imageSrc} alt={`screenshot of ${name}`} />
+            <div className="hover-secondary-container">
+                <Button type="secondary" cta="View Project" linkTo={url} title={`View ${name}`} />
+            </div>
         </a>
     )
 }
@@ -61,9 +73,12 @@ function MyProjects() {
                                     <TechStackPill key={index} techName={tech} />
                                 ))}
                             </div>
-                            {proj.description_paragraphs.map((para, i) => (
-                                <p key={i}>{para}</p>
-                            ))}
+                            <div className="project-section-text">
+                                {proj.description_paragraphs.map((para, i) => (
+                                    <p key={i}>{para}</p>
+                                ))}
+                                <Button type="primary" cta="View Project" linkTo={proj.url} title={`View ${proj.name}`} />
+                            </div>
                         </div>  
                     </div>
                 </section>
@@ -90,8 +105,7 @@ function ProjectsPage() {
                     <h1>My Projects</h1>
                     <p className="margin-bottom">This section of my portfolio lists the things I have worked on, both personally and professionally.</p>
                 </section>
-                <MyProjects />
-                
+                <MyProjects />                
             </main>
             <Footer />
         </>
